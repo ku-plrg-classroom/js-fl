@@ -1,0 +1,34 @@
+{
+  "name": "js-fl",
+  "version": "1.0.0",
+  "description": "A fault localization tool for a small subset of JavaScript, given the faulty program and an oracle",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc -b",
+    "build:watch": "tsc -b -w",
+    "start": "ts-node src",
+    "start:watch": "nodemon src -e ts,json --exec 'ts-node'",
+    "test": "mocha -r ts-node/register/transpile-only -t 120000 \"test/**/*.ts\"",
+    "test:watch": "mocha -r ts-node/register/transpile-only -t 120000 \"test/**/*.ts\" -w --watch-files \"**/*.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.27",
+    "@types/yargs": "^17.0.32",
+    "mocha": "^12.0.2",
+    "nodemon": "^3.1.0",
+    "rimraf": "^6.1.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "acorn": "^8.11.3",
+    "acorn-walk": "^8.3.2",
+    "astring": "^1.9.0",
+    "chalk": "^4.1.2",
+    "yargs": "^17.7.2"
+  }
+}
